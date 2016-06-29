@@ -1,31 +1,47 @@
-class nginx {
-package { 'nginx':
-ensure => present,
-}
-file {'/var/www':
-ensure => directory,
-owner  => 'root',
-group  => 'root',
-mode   => '0775',
-}
+class
+nginx
+ {
+File
+ {
+owner
+ => 
+'root'
+,
+group
+ => 
+'root'
+,
+mode
+  => 
+'0664'
+,
+  }
+package
+ { 
+'nginx'
+:
+ensure
+ => 
+present
+,
+  }
+file
+ { [ 
+'/var/www'
+, 
+'/etc/nginx/conf.d'
+ ]:
+ensure
+ => 
+directory
+,
+  }
 file
  { 
 '/var/www/index.html'
 :
 ensure
  => file,
-owner
-  => 
-'root'
-,
-group
-  => 
-'root'
-,
-mode
-   => 
-'0664'
-,
 source
  => 
 'puppet:///modules/nginx/index.html'
@@ -37,18 +53,6 @@ file
 :
 ensure
   => file,
-owner
-   => 
-'root'
-,
-group
-   => 
-'root'
-,
-mode
-    => 
-'0664'
-,
 source
   => 
 'puppet:///modules/nginx/nginx.conf'
@@ -64,53 +68,20 @@ notify
   }
 file
  { 
-'/etc/nginx/conf.d'
-:
-ensure
- => 
-directory
-,
-owner
-  => 
-'root'
-,
-group
-  => 
-'root'
-,
-mode
-   => 
-'0775'
-,
-  }
-file
- { 
 '/etc/nginx/conf.d/default.conf'
 :
 ensure
   => file,
-owner
-   => 
-'root'
-,
-group
-   => 
-'root'
-,
-mode
-    => 
-'0664'
-,
 source
   => 
 'puppet:///modules/nginx/default.conf'
 ,
-require
- => Package[
-'nginx'
-],
 notify
   => Service[
+'nginx'
+],
+require
+ => Package[
 'nginx'
 ],
   }
