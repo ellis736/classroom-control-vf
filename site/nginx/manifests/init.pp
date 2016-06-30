@@ -133,32 +133,13 @@ notify
 'nginx'
 ],
   }
-file
- { 
-"${confdir}/conf.d/default.conf"
-:
-ensure
-  => file,
-content
- => template(
-'nginx/default.conf.erb'
-),
-notify
-  => Service[
-'nginx'
-],
-  }
-service
- { 
-'nginx'
-:
-ensure
-    => 
-running
-,
-enable
-    => 
-true
-,
+file{"${confdir}/conf.d/default.conf":
+ensure  => file,
+content => template('nginx/default.conf.erb'),
+notify  => Service['nginx'],
+}
+service {'nginx':
+ensure => running,
+enable => true,
   }
 }
