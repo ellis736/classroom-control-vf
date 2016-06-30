@@ -1,6 +1,5 @@
 define
-users
-::managed_user (
+users::managed_user (
 $group
  = 
 $title
@@ -16,9 +15,7 @@ present
 ,
   }
 file
- { 
-"/home/${title}"
-:
+ { "/home/${title}":
 ensure
  => 
 directory
