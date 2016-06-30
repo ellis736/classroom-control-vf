@@ -15,7 +15,7 @@ $docroot = 'C:/ProgramData/nginx/html'
 $confdir = 'C:/ProgramData/nginx'
 $logdir = 'C:/ProgramData/nginx/logs'
 }
-default   : {
+default : {
  fail("Module ${module_name} is not supported on ${::osfamily}")
 }
 }
@@ -25,7 +25,8 @@ $user = $::osfamily ? {
 'debian' => 'www-data',
 'windows' => 'nobody',
 }
-file { owner => $owner,
+
+File { owner => $owner,
 group => $group,
 mode => '0664',
 }
