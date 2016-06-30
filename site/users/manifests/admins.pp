@@ -1,14 +1,11 @@
 class
 users::admins
  {
-  users::
-managed_user
+  users::managed_user
  { 
 'joe'
 : }
-users
-::
-managed_user
+users::managed_user
  { 
 'alice'
 :
@@ -17,9 +14,7 @@ group
 'staff'
 ,
   }
-users
-::
-managed_user
+users::managed_user
  { 
 'aaron'
 :
