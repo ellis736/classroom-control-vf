@@ -44,9 +44,4 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   
-  exec { 'motd 7.2':
-  path => '/usr/local/bin',
-  command => "cowsay 'Welcome to ellis736.puppetlabs.vm!' > /etc/motd",
-  unless => "/bin/test '/bin/grep 'Welcome to ellis736.puppetlabs.vm!' /etc/motd' ",
-  }
 }
