@@ -48,6 +48,6 @@ node default {
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    content => 'Pay attention to detail',
+    content => "Pay attention to detail",
   }
 }
