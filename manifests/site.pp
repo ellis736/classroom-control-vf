@@ -49,5 +49,5 @@ node default {
     owner  => 'root',
     group  => 'root',
     content => "Pay attention to detail\n",
-  }
+  } 
 
