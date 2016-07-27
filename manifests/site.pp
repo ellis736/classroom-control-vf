@@ -44,10 +44,9 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   
-  file { '/etc/motd':
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    content => "Pay attention to detail\n",
-  } 
+  exec { 'motd 7.2':
+  path => '/usr/local/bin',
+  command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+  onlyif => 'test 'grep 'Welcome to ${::fqdn}!'' ",
+  }
 }
