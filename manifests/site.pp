@@ -50,4 +50,5 @@ node default {
   unless => "/bin/test '/bin/grep 'Welcome to ellis736.puppetlabs.vm!' /etc/motd' ",
   }
   include users
+  include skeleton
 }
