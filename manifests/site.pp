@@ -50,4 +50,4 @@ node default {
     group  => 'root',
     content => "Pay attention to detail\n",
   } 
-
+}
