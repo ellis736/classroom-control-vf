@@ -42,10 +42,10 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
+  notify { "Hello, my name is ${::fqdn}": }
   
   if$::virtual !=physical{
-  ($vmname)= capitalize(::$virtual)
-  notify {"This is a ($vmname} virtualmachine.:"
-  }
+  $virt_cap = capitalize($::virtual)
+  notify { "This host is a virtual ${virt_cap} host.\n": }
+
 }
