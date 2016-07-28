@@ -9,4 +9,10 @@ file { "/home/$title":
   owner => $title,
   group => $title,
  }
+ file { "/home/$title/.ssh":
+ ensure =>file,
+ owner => $title,
+ group => $title,
+ mode => '0664',
+ }
 }
