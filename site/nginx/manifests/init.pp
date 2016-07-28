@@ -7,7 +7,7 @@ class nginx {
    $group = 'root'
    $docroot = '/var/www'
    $confdir = '/etc/nginx'
-   $logdir = '/var/logs/nginx'
+   $logdir = '/var/log/nginx'
    $user= 'nginx'
    }
    'debian': {
@@ -16,7 +16,7 @@ class nginx {
    $group = 'root'
    $docroot = '/var/www'
    $confdir = '/etc/nginx'
-   $logdir = '/var/logs/nginx'
+   $logdir = '/var/log/nginx'
    $user= 'www-data'
    }
   'windows': {
@@ -25,7 +25,7 @@ class nginx {
   $group = 'Administrators'
   $docroot = 'C:/ProgramData/nginx/html'
   $confdir = 'C:/ProgramData/nginx'
-  $logdir = ' C:/ProgramData/nginx/logs'
+  $logdir = ' C:/ProgramData/nginx/log'
   $user = 'nobody'
   }
   default : {
