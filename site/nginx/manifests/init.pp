@@ -15,7 +15,7 @@ class nginx {
    $owner = 'root'
    $group = 'root'
    $docroot = '/var/www'
-   $confdir = '/etc/nginx/'
+   $confdir = '/etc/nginx'
    $logdir = '/var/logs/nginx'
    $user= 'www-data'
    }
