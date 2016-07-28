@@ -45,7 +45,7 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   if$::virtual !=physical{
-  {$vmname}= capitalize(::$virtual)
-  notify{"This is a ($vmname} virtualmachine.:"
+  $vmname= capitalize(::$virtual)
+  notify {"This is a ($vmname} virtualmachine.:"
   }
 }
