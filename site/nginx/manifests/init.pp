@@ -21,7 +21,7 @@ fail("Module ${module_name} is not supported on ${::osfamily}")
   }
 }
 #User that the service will run as
- $user=$::osfamily? {
+ $user = $::osfamily? {
  'redhat' = ' nginx',
  'debian' = 'www-data,'
  'windows' = 'nobody',
