@@ -1,13 +1,24 @@
 class nginx {
+  
   case $::osfamily {
-  'redhat', 'debian': {
+  'redhat': {
    $package = 'nginx'
    $owner = 'root'
    $group = 'root'
    $docroot = '/var/www'
    $confdir = '/etc/nginx/'
    $logdir = '/var/logs/nginx'
-  }
+   $user= 'nginx'
+   }
+   'debian': {
+   $package = 'nginx'
+   $owner = 'root'
+   $group = 'root'
+   $docroot = '/var/www'
+   $confdir = '/etc/nginx/'
+   $logdir = '/var/logs/nginx'
+   $user= 'www-data'
+   }
   'windows': {
   $package = 'nginx-service'
   $owner = 'Administrator'
@@ -15,17 +26,13 @@ class nginx {
   $docroot = 'C:/ProgramData/nginx/html'
   $confdir = 'C:/ProgramData/nginx'
   $logdir = ' C:/ProgramData/nginx/logs'
+  $user = 'nobody'
   }
   default : {
 fail("Module ${module_name} is not supported on ${::osfamily}")
   }
 }
-#User that the service will run as
- $user = $::osfamily? {
- 'redhat' = ' nginx',
- 'debian' = 'www-data,'
- 'windows' = 'nobody',
- }
+
   File {
    owner => '$owner',
    group => '$group',
