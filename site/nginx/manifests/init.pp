@@ -34,8 +34,8 @@ fail("Module ${module_name} is not supported on ${::osfamily}")
 }
 
   File {
-   owner => '$owner',
-   group => '$group',
+   owner => $owner,
+   group => $group,
    mode => '0644',
   }
    
