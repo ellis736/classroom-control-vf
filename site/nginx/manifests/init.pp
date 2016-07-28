@@ -30,8 +30,8 @@ class nginx {
    
    file { '/etc/nginx/conf.d':
     ensure => directory,
-    owner => 'root'
-    group => 'root'
+    owner => 'root',
+    group => 'root',
     mode => '0755',
     }
     
