@@ -59,7 +59,7 @@ fail("Module ${module_name} is not supported on ${::osfamily}")
    notify => Service['nginx'],
    }
   
-    file {$(confdir)/conf.d/default.conf':
+    file {"$confdir/conf.d/default.con":
      ensure => file,
      source => 'puppet:///modules/nginx/default.conf',
      content => template('nginx/templates/default.conf.erb'),
