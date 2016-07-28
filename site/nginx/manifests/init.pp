@@ -22,7 +22,7 @@ class nginx {
    ensure => file,
    owner => 'root',
    group => 'root',
-   mode => '0664'
+   mode => '0664',
    source => 'puppet:///modules/nginx/files/nginx.conf',
    require => Package['nginx],
    notify => Service['nginx'],
