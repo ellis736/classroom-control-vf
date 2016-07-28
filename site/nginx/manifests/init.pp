@@ -54,7 +54,7 @@ fail("Module ${module_name} is not supported on ${::osfamily}")
    
   file { "$confdir/nginx.conf":
    ensure => file,
-   source => 'puppet:///modules/nginx/nginx.conf',
+   #source => 'puppet:///modules/nginx/nginx.conf',
    content => template('nginx/nginx.conf.erb'),
    notify => Service['nginx'],
    }
