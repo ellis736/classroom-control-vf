@@ -4,7 +4,7 @@ class users::admins {
   users::managed_user {'chen':
     group => 'admin',
   }
-  gourp { 'admin':
+  group { 'admin':
    ensure => present,
   }
 }
