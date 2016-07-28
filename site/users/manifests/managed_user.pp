@@ -7,12 +7,12 @@ user {$title:
 file { "/home/$title":
   ensure =>directory,
   owner => $title,
-  group => $title,
+  group => $group,
  }
  file { "/home/$title/.ssh":
  ensure =>file,
  owner => $title,
- group => $title,
+ group => $group,
  mode => '0664',
  }
 }
