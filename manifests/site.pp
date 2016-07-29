@@ -51,5 +51,4 @@ node default {
   $vmname = capitalize($::virtual)
   notify { "This is a ${vmname} virtual machine.\n": }
   }
-  include nginx
 }
