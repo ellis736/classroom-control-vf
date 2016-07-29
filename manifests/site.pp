@@ -47,7 +47,6 @@ node default {
   $message = hiera('message')
   notify { $message: }
   class { 'nginx':
-    root => '/tmp/www',
   }
   
   if$::virtual !=physical{
