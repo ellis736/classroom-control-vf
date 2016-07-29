@@ -45,7 +45,7 @@ node default {
   notify { "Hello, my name is ${::fqdn}": }
   
   $message = hiera('message' , 'No message found')
-  notify( $message)
+  notify { $message }
   
   if$::virtual !=physical{
   $virt_cap = capitalize($::virtual)
