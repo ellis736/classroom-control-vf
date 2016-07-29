@@ -46,9 +46,6 @@ node default {
   
   $message = hiera('message')
   notify { $message: }
-  class { 'nginx':
-    docroot => '/var/www',
-  }
   
   if$::virtual !=physical{
   $vmname = capitalize($::virtual)
