@@ -1,11 +1,13 @@
-class nginx(
- $package::$nginx::params::package,
- $owner::$nginx::params::owner,
- $group::$nginx::params::group,
- $default_docroot::$nginx::params::default_docroot,
- $confdir::$nginx::params::confdir,
- $logdir::$nginx::params::logdir,
- $user::$nginx::params::user
+class nginx 
+(
+ $root        = $nginx::params::root, 
+ $package     = $nginx::params::package,
+ $owner       = $nginx::params::owner,
+ $group       = $nginx::params::group,
+ $docroot     = $nginx::params::docroot,
+ $confdir     = $nginx::params::confdir,
+ $logdir      = $nginx::params::logdir,
+ $user        = $nginx::params::user,
  ) inherits nginx::params {
  
   File {
