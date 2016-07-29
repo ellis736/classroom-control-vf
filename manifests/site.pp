@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::fqdn}": }
   
-  $message = hiera('message' , 'No message found')
+  $message = hiera('message')
   notify { $message: }
   
   if$::virtual !=physical{
