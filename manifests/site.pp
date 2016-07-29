@@ -46,7 +46,8 @@ node default {
   
   $message = hiera('message')
   notify { $message: }
-  class {' nginx':
+  
+  class {'nginx':
    root => '/var/www',
   }
   
