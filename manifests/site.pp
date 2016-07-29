@@ -44,6 +44,9 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::fqdn}": }
   
+  $message = hiera('message')
+  notify( $message)
+  
   if$::virtual !=physical{
   $virt_cap = capitalize($::virtual)
   notify { "This host is a virtual ${virt_cap} host.\n": }
