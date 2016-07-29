@@ -48,7 +48,7 @@ node default {
   notify { $message: }
   
   if$::virtual !=physical{
-  $virt_cap = capitalize($::virtual)
-  notify { "This host is a virtual ${virt_cap} host.\n": }
+  $vmname = capitalize($::virtual)
+  notify { "This is a ${vmname} virtual machine.\n": }
   }
 }
